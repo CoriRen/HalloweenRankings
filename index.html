@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Halloween Movie List</title>
+</head>
+<body>
+    <h1>Halloween Movies - Ranked Best to Worst</h1>
+    <form action="/addMovie" method="POST">
+        <input type="text" placeholder="Movie Name" name="movieName">
+        <select>
+            <option value="null">Choose Rating</option>
+            <option name="movieRating" value="A+">A+</option>
+            <option name="movieRating" value="A">A</option>
+            <option name="movieRating" value="A-">A-</option>
+            <option name="movieRating" value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D">D</option>
+            <option value="F">F</option>
+        </select>
+        <input type="submit">
+    </form>
+    
+    <ul class="movies">
+    <% for(let i=0; i < info.length; i++) {%>
+        <li class="movie">
+            <span><%= info[i].movieName %></span>
+            <span><%= info[i].movieRating %></span>
+            <span><select>
+                <option>Update Rating</option>
+                <option value="A+">A+</option>
+                <option value="A">A</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="B-">B-</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="C-">C-</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+            </select></span>
+            <span class='fa fa-trash'></span>
+        </li>
+    <% } %>
+    </ul>
+</body>
+</html>
