@@ -6,8 +6,7 @@ const PORT = 10000
 require('dotenv').config()
 
 let db,
-    //dbConnectionStr = process.env.DB_STRING
-    dbConnectionStr = DB_STRING,
+    dbConnectionStr = process.env.DB_STRING,
     dbName = 'halloween'
 
 app.set('view engine', 'ejs')
