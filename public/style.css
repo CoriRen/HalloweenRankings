@@ -1,0 +1,157 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*Typography*/
+h1{
+    font-size: 26px;
+    display: block;
+}
+
+/* Body Styling */
+body {
+    background-color: #181818;
+    color: #e6e6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main Container */
+.movies {
+    list-style: none;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Individual Movie Entry */
+.movieList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+.movieList:hover {
+    transform: translateY(-2px);
+}
+
+/* Movie Title */
+.movie {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #e6e6e6;
+    max-width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* Movie Rating */
+.rating {
+    font-size: 1em;
+    color: #ffcc00;
+    margin-right: 20px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    align-items: center;
+}
+
+/* Dropdown Styling */
+form select {
+    background-color: #333;
+    color: #e6e6e6;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 0.9em;
+    margin-right: 10px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+form select:hover, form select:focus {
+    border-color: #ffcc00;
+}
+
+/* Submit Button Styling */
+form input[type="submit"] {
+    background-color: #ffcc00;
+    border: none;
+    color: #222;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #e6b800;
+}
+
+/* Delete Icon Styling */
+.fa-trash {
+    font-size: 1.2em;
+    color: lightgray;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.fa-trash:hover {
+    color: #e6b800;
+}

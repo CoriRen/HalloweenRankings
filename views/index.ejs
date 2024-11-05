@@ -8,25 +8,28 @@
     <title>Halloween Movie List</title>
 </head>
 <body>
-    <h1>Rank Your Favorite Halloween Movies</h1>
-    <form action="/addMovie" method="POST">
-        <input type="text" placeholder="Movie Name" name="movieName">
-        <select name="movieRating">
-            <option value="null">Choose Rating</option>
-            <option value="A+">A+</option>
-            <option value="A">A</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B">B</option>
-            <option value="B-">B-</option>
-            <option value="C+">C+</option>
-            <option value="C">C</option>
-            <option value="C-">C-</option>
-            <option value="D">D</option>
-            <option value="F">F</option>
-        </select>
-        <input type="submit">
-    </form>
+    <h1>Rank Your Favorite Movies</h1>
+    <div class="formContainer">
+        <form action="/addMovie" method="POST">
+            <input type="text" placeholder="Movie Name" name="movieName">
+            <select name="movieRating">
+                <option value="null">Choose Rating</option>
+                <option value="A+">A+</option>
+                <option value="A">A</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="B-">B-</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="C-">C-</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+            </select>
+            <input type="submit">
+        </form>
+    </div>
+
     
     <ul class="movies">
         <% for(let i=0; i < movies.length; i++) {%>
