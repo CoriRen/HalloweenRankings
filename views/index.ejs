@@ -8,7 +8,7 @@
     <title>Halloween Movie List</title>
 </head>
 <body>
-    <h1>Rank Your Favorite Movies</h1>
+    <h1>Rank Your Favorite Halloween Movies</h1>
     <form action="/addMovie" method="POST">
         <input type="text" placeholder="Movie Name" name="movieName">
         <select name="movieRating">
@@ -33,7 +33,7 @@
             <li class="movieList">
                 <span class="movie"><%= movies[i].movieName %></span>
                 <span class="rating"><%= movies[i].movieRating %></span>
-                <span><form action="/updateMovieRating" method="PUT">
+                <span><form action="/updateMovieRating" method="PUT" class="ratingsForm">
                     <select name="updateRating" >
                         <option value="null">Choose Rating</option>
                         <option value="A+">A+</option>

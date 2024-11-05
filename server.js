@@ -39,18 +39,38 @@ app.post('/addMovie', (request, response) => {
     .catch(error => console.error(error))
 })
 
-app.put('/updateMovieRating', (request, response) => {
-    db.collection('movies').updateOne({movieName: request.body.mName},{
-        $set: {
-            movieRating:request.body.mRating
-        }
-    })
-    .then(result => {
-        console.log('Movie Rating Updated')
-        response.json('Movie Rating Updated')
-    })
-    .catch(error => console.error(error))
-})
+// app.put('/updateMovieRating', (request, response) => {
+//     db.collection('movies').updateOne({movieName: request.body.mName},{
+//         $set: {
+//             movieRating:request.body.mRating
+//         }
+//     })
+//     .then(result => {
+//         console.log('Movie Rating Updated')
+//         response.json('Movie Rating Updated')
+//     })
+//     .catch(error => console.error(error))
+// })
+app.put('/updateMovieRating', async (request, response) => {
+    try {
+        const updateResult = await db.collection('movies').updateOne(
+            { movieName: request.body.mName },
+            { $set: { movieRating: request.body.mRating } }
+        );
+
+        console.log('Movie Rating Updated');
+
+        const sortedMovies = await db.collection('movies')
+            .find()
+            .sort({ movieRating: 1 }) 
+            .toArray();
+
+        response.json({ message: 'Movie Rating Updated', movies: sortedMovies });
+    } catch (error) {
+        console.error(error);
+        response.status(500).json({ error: 'Failed to update movie rating' });
+    }
+});
 
 app.delete('/deleteMovie', (request, response) => {
     db.collection('movies').deleteOne({movieName: request.body.movieName})
