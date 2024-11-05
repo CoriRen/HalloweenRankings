@@ -30,11 +30,11 @@
     
     <ul class="movies">
         <% for(let i=0; i < movies.length; i++) {%>
-            <li class="movie">
-                <span><%= movies[i].movieName %></span>
-                <span><%= movies[i].movieRating %></span>
+            <li class="movieList">
+                <span class="movie"><%= movies[i].movieName %></span>
+                <span class="rating"><%= movies[i].movieRating %></span>
                 <span><form action="/updateMovieRating" method="PUT">
-                    <select name="movieRating" >
+                    <select name="updateRating" >
                         <option value="null">Choose Rating</option>
                         <option value="A+">A+</option>
                         <option value="A">A</option>

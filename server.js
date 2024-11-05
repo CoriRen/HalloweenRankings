@@ -14,7 +14,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-MongoClient.connect(dbConnectionStr)
+MongoClient.connect("mongodb+srv://corinnegoodsmith:C%40nopybed23@cluster0.jtbru.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 //change connectionString to dbConnectionStr
     .then(client => {
         console.log(`Connected to ${dbName} Database`)
@@ -40,8 +40,7 @@ app.post('/addMovie', (request, response) => {
 })
 
 app.put('/updateMovieRating', (request, response) => {
-    db.collection('movies').updateOne({movieName: request.body.movieName,
-    movieRating: request.body.movieRating},{
+    db.collection('movies').updateOne({movieName: request.body.mName},{
         $set: {
             movieRating:request.body.mRating
         }
@@ -49,7 +48,6 @@ app.put('/updateMovieRating', (request, response) => {
     .then(result => {
         console.log('Movie Rating Updated')
         response.json('Movie Rating Updated')
-        response.redirect('/')
     })
     .catch(error => console.error(error))
 })

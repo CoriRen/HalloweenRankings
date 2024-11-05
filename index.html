@@ -31,8 +31,8 @@
     <ul class="movies">
     <% for(let i=0; i < info.length; i++) {%>
         <li class="movie">
-            <span><%= info[i].movieName %></span>
-            <span><%= info[i].movieRating %></span>
+            <span class="movie"><%= info[i].movieName %></span>
+            <span class="rating"><%= info[i].movieRating %></span>
             <span><select>
                 <option>Update Rating</option>
                 <option value="A+">A+</option>

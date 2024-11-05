@@ -1,13 +1,17 @@
 const deleteText = document.querySelectorAll('.fa-trash')
-const ratingMenu = document.querySelectorAll('.ratingsMenu')
+const movieForms = document.querySelectorAll('.movieList form');
 
 Array.from(deleteText).forEach((element)=>{
     element.addEventListener('click', deleteMovie)
 })
 
-Array.from(ratingMenu).forEach((element)=>{
-    element.addEventListener('click', updateRating)
-})
+Array.from(movieForms).forEach((form) => {
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        updateRating(this); // Pass the form element to updateRating
+    });
+});
+
 async function deleteMovie(){
     const mName = this.parentNode.childNodes[1].innerText
     try{
@@ -27,16 +31,16 @@ async function deleteMovie(){
     }
 }
 
-async function updateRating(){
-    const mName = this.parentNode.childNodes[1].innerText
-    const mRating = this.parentNode.childNodes[2].innerText
+async function updateRating(formElement){
+    const movie = formElement.closest('.movieList').querySelector('.movie').innerText;
+    const rating = formElement.querySelector('select[name="updateRating"]').value;
     try{
         const response = await fetch('updateMovieRating', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-              'movieName': mName,
-              'movieRating': mRating
+              'mName': movie,
+              'mRating': rating
             })
           })
         const data = await response.json()
