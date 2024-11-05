@@ -1,7 +1,7 @@
 # Halloween Movie Rankings
 A web application for movie enthusiasts to track, rank, and manage their favorite movies. Users can add new movies to the list, assign or update movie ratings, and delete movies they no longer want to keep track of. The list of movies can also be dynamically sorted by rating.
 
-**Link to project:** [http://recruiters-love-seeing-live-demos.com/](https://halloweenrankings.onrender.com/)
+**Link to project:** [https://halloweenrankings.onrender.com/](https://halloweenrankings.onrender.com/)
 
 ## How It's Made:
 
